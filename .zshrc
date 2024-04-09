@@ -1,3 +1,5 @@
+eval "$(direnv hook zsh)"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -120,3 +122,10 @@ PURE_POWER_MODE=modern    # use nerdfont characters in the prompt(default)
 #PURE_POWER_MODE=fancy     # use unicode characters in the prompt
 #PURE_POWER_MODE=portable  # use only ascii characters in the prompt
 source ~/dotfiles/.zsh-themes/gruvbox-material-dark.zsh
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+eval "$(pyenv init --path)"
+
