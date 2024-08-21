@@ -22,7 +22,7 @@ return {
       tmux_autoclose_windows = false,
       excluded_filetypes = { "harpoon" },
       mark_branch = true,
-      tabline = false,
+      tabline = true,
       tabline_prefix = "   ",
       tabline_suffix = "   ",
     })
@@ -49,6 +49,18 @@ return {
     keymap.set("n", "<leader>5", function()
       ui.nav_file(5)
     end, { desc = "Harpoon to file 5" })
+    keymap.set("n", "<leader>6", function()
+      ui.nav_file(6)
+    end, { desc = "Harpoon to file 6" })
+    keymap.set("n", "<leader>7", function()
+      ui.nav_file(7)
+    end, { desc = "Harpoon to file 7" })
+    keymap.set("n", "<leader>8", function()
+      ui.nav_file(8)
+    end, { desc = "Harpoon to file 8" })
+    keymap.set("n", "<leader>9", function()
+      ui.nav_file(9)
+    end, { desc = "Harpoon to file 9" })
 
     -- Keymap to toggle Harpoon tabline
     keymap.set("n", "<leader>ht", function()

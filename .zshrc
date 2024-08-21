@@ -116,7 +116,10 @@ export PATH=$PATH:$HOME/.config/lsp/lua-language-server/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
-
+export PATH=$PATH:/usr/local/sbin
+#Kubeconfig contexts setup
+export KUBECONFIG=~/.kube/ams3-stork8s-herd01:~/.kube/nyc3-stork8s-herd01:~/.kube/blr1-stork8s-herd01:~/.kube/fra1-stork8s-herd01:~/.kube/lon1-stork8s-herd01:~/.kube/nbg1-stork8s-herd01:~/.kube/sfo2-stork8s-herd01:~/.kube/sfo3-stork8s-herd01:~/.kube/sgp1-stork8s-herd01:~/.kube/syd1-stork8s-herd01:~/.kube/tor1-stork8s-herd01:~/.kube/stage2-stork8s-herd02:~/.kube/stage2-stork8s-herd03:~/.kube/stage2-stork8s-herd04
+alias k=kubectl
 
 PURE_POWER_MODE=modern    # use nerdfont characters in the prompt(default)
 #PURE_POWER_MODE=fancy     # use unicode characters in the prompt
@@ -128,4 +131,3 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 eval "$(pyenv init --path)"
-

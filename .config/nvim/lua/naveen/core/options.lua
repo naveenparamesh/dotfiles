@@ -40,3 +40,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- height of vim lualine from tmux status line should be 0
+opt.cmdheight = 0
