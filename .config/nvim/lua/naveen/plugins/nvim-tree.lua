@@ -1,5 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
+  version = "*",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     local nvimtree = require("nvim-tree")
@@ -12,8 +13,17 @@ return {
     vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
     vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
 
+    local function on_attach(bufnr)
+      local api = require("nvim-tree.api")
+      -- apply default mappings first
+      api.config.mappings.default_on_attach(bufnr)
+      -- remove <C-e> so normal scroll-down works in the tree buffer
+      vim.keymap.del("n", "<C-e>", { buffer = bufnr })
+    end
+
     -- configure nvim-tree
     nvimtree.setup({
+      on_attach = on_attach,
       view = {
         width = 35,
         relativenumber = true,

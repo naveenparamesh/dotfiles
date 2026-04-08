@@ -1,5 +1,6 @@
 return {
   "stevearc/conform.nvim",
+  version = "*",
   lazy = true,
   event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
   config = function()
@@ -23,7 +24,7 @@ return {
         go = { "gofmt" },
       },
       format_on_save = {
-        lsp_fallback = true,
+        lsp_format = "fallback",
         async = false,
         timeout_ms = 1000,
       },
@@ -31,7 +32,7 @@ return {
 
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
       conform.format({
-        lsp_fallback = true,
+        lsp_format = "fallback",
         async = false,
         timeout_ms = 1000,
       })

@@ -13,7 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "naveen.plugins" }, { import = "naveen.plugins.lsp" } }, {
   install = {
-    colorscheme = { "gruvbox-material" },
+    -- colorscheme = { "tokyonight" },
+    colorscheme = { "sonokai" },
+    -- colorscheme = { "catppuccin" },
+    -- colorscheme = { "gruvbox-material" },
   },
   checker = {
     enabled = true,

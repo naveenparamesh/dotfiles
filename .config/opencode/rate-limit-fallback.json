@@ -1,0 +1,33 @@
+{
+  "enabled": true,
+  "cooldownMs": 300000,
+  "fallbackMode": "cycle",
+  "fallbackModels": [
+    {
+      "providerID": "google",
+      "modelID": "gemini-3.1-pro-preview"
+    },
+    {
+      "providerID": "google",
+      "modelID": "gemini-3-pro-preview"
+    },
+    {
+      "providerID": "google",
+      "modelID": "gemini-2.5-pro"
+    },
+    {
+      "providerID": "google",
+      "modelID": "gemini-2.5-flash"
+    }
+  ],
+  "patterns": [
+    "rate limit",
+    "usage limit",
+    "too many requests",
+    "quota exceeded",
+    "overloaded",
+    "capacity exceeded",
+    "high concurrency"
+  ],
+  "logging": true
+}

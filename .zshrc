@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 eval "$(direnv hook zsh)"
 
 # If you come from bash you might have to change your $PATH.
@@ -103,7 +110,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
+source ~/.z-monokai
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# override zsh-syntax-highlighting defaults
+ZSH_HIGHLIGHT_STYLES[path]=
+ZSH_HIGHLIGHT_STYLES[path_pathseparator]=fg=black,bold
+ZSH_HIGHLIGHT_STYLES[path_prefix]=
 
 alias vim='nvim'
 set -o vi
@@ -119,20 +131,28 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/bin
 #Kubeconfig contexts setup
-export KUBECONFIG=~/.kube/ams3-stork8s-herd01:~/.kube/nyc3-stork8s-herd01:~/.kube/blr1-stork8s-herd01:~/.kube/fra1-stork8s-herd01:~/.kube/lon1-stork8s-herd01:~/.kube/nbg1-stork8s-herd01:~/.kube/sfo2-stork8s-herd01:~/.kube/sfo3-stork8s-herd01:~/.kube/sgp1-stork8s-herd01:~/.kube/syd1-stork8s-herd01:~/.kube/tor1-stork8s-herd01:~/.kube/stage2-stork8s-herd01:~/.kube/stage2-stork8s-herd02:~/.kube/stage2-stork8s-herd03:~/.kube/stage2-stork8s-herd04:~/.kube/test-stork8s-herd01:~/.kube/test-next-stork8s-herd01
+export KUBECONFIG=
 alias k=kubectl
 
 PURE_POWER_MODE=modern    # use nerdfont characters in the prompt(default)
 #PURE_POWER_MODE=fancy     # use unicode characters in the prompt
 #PURE_POWER_MODE=portable  # use only ascii characters in the prompt
-source ~/dotfiles/.zsh-themes/gruvbox-material-dark.zsh
+# source ~/dotfiles/.zsh-themes/gruvbox-material-dark.zsh
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$(npm config get prefix)/bin:$PATH"
 eval "$(pyenv init --path)"
 
 # Set up fzf keybindings and fuzzy completion
 source <(fzf --zsh)
+
+[[ -s "/Users/nparamesh/.gvm/scripts/gvm" ]] && source "/Users/nparamesh/.gvm/scripts/gvm"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

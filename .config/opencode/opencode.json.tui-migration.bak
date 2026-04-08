@@ -1,0 +1,11 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["opencode-gemini-auth@latest"],
+  "autoupdate": true,
+  "permission": {
+    "*": "ask"
+  },
+  "keybinds": {
+    "input_newline": "shift+return,alt+return"
+  }
+}

@@ -1,0 +1,5 @@
+.config/configstore/
+.config/fish/
+.config/gh/
+.config/github-copilot/
+.config/uv/

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "agent": {
+    "build": {
+      "model": "google/gemini-3.1-pro-preview",
+      "permissions": {
+        "edit": { "*": "ask" },
+        "bash": {
+          "*": "ask",
+          "go test*": "allow",
+          "go vet*": "allow",
+          "go build*": "allow",
+          "go run*": "allow",
+          "go mod*": "allow",
+          "pytest*": "allow",
+          "python -m pytest*": "allow",
+          "ruff *": "allow",
+          "flake8*": "allow",
+          "ansible-lint*": "allow",
+          "helm lint*": "allow",
+          "helm template*": "allow",
+          "helm test*": "allow",
+          "cookstyle*": "allow",
+          "hadolint*": "allow",
+          "shellcheck*": "allow",
+          "make *": "allow",
+          "vault policy fmt*": "allow",
+          "molecule*": "allow",
+          "git *": "allow"
+        }
+      }
+    },
+    "plan": {
+      "model": "google/gemini-3.1-pro-preview"
+    }
+  },
+
+  "plugin": [
+    "@azumag/opencode-rate-limit-fallback"
+  ],
+
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true
+    },
+    "engram": {
+      "type": "local",
+      "command": ["engram", "mcp"],
+      "enabled": true
+    }
+  },
+
+  "lsp": {
+    "yaml": {
+      "disabled": false,
+      "command": ["yaml-language-server", "--stdio"],
+      "extensions": [".yaml", ".yml"]
+    },
+    "dockerfile": {
+      "disabled": false,
+      "command": ["docker-langserver", "--stdio"],
+      "extensions": ["Dockerfile", ".dockerfile"]
+    }
+  },
+
+  "compaction": {
+    "auto": true,
+    "prune": true
+  }
+}

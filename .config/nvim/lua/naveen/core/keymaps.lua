@@ -1,6 +1,9 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
+-- Force block cursor always (prevent mode changes)
+vim.opt.guicursor = ""
+
 local keymap = vim.keymap -- for conciseness
 
 ---------------------

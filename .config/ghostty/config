@@ -1,0 +1,34 @@
+term = xterm-256color
+
+# 1. Keybinds (Unbind ghostty keys for Tmux / OpenCode)
+keybind = ctrl+shift+left=unbind
+keybind = ctrl+shift+right=unbind
+# Note: We removed the Shift+Enter hack since we are handling it in Tmux now
+
+# 2. Visuals
+theme = Snazzy
+font-size = 13
+font-style = Bold
+font-style-bold = Bold
+# 2. THE GOLAND SPACING (Crucial)
+# IDEs usually have ~1.2 line height. Terminals are usually 1.0.
+# This adds 20% padding to match the airy feel of GoLand.
+adjust-cell-height = 10%
+font-family = JetBrains Mono
+cursor-style = block
+# Increases the minimum contrast ratio (makes text pop more)
+minimum-contrast = 1.1
+
+# 3. Window Effects
+window-decoration = true
+# Removes the title bar text & icon, keeps traffic lights
+macos-titlebar-style = transparent
+macos-titlebar-proxy-icon = hidden
+title = " "
+background-opacity = 0.85
+background-blur-radius = 90
+mouse-hide-while-typing = true
+
+# Force startup window size (Columns x Rows)
+window-width = 175
+window-height = 50
